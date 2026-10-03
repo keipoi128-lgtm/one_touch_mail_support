@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ワンタッチメール サポート</title>
+<meta name="description" content="iPhoneアプリ「ワンタッチメール」の設定方法、使い方、よくある質問、お問い合わせ先です。">
+<link rel="canonical" href="https://keipoi128-lgtm.github.io/one_touch_mail_support/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFCFE; --ink:#172033; --sub:#4A5568; --blue:#0A63E0; --deep:#0846C0;
+  --mist:#E6ECF5; --panel:#F1F5FB; --note-bg:#FFF6E5; --note-ink:#7A4700; --note-line:#E8B45C;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1522; --ink:#E8EDF6; --sub:#AAB5C8; --blue:#5B9BFF; --deep:#8DB8FF;
+    --mist:#26324A; --panel:#172136; --note-bg:#2A2110; --note-ink:#F3CF8C; --note-line:#8A6420;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"BIZ UDPGothic","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;
+  font-size:18px; line-height:1.9; letter-spacing:.02em;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.wrap{max-width:40rem; margin:0 auto; padding:0 1.25rem}
+header.site{border-bottom:1px solid var(--mist); padding:2.25rem 0 1.75rem}
+.app{margin:0; font-size:1rem; color:var(--sub); font-weight:700}
+h1{margin:.35rem 0 0; font-size:2rem; line-height:1.4; letter-spacing:.04em;
+   border-left:6px solid var(--blue); padding-left:.8rem}
+.lead{margin:1rem 0 0; color:var(--sub)}
+main{padding:1.5rem 0 3rem}
+h2{font-size:1.35rem; line-height:1.5; margin:2.75rem 0 .75rem; padding-top:.5rem; border-top:1px solid var(--mist)}
+main>section:first-child h2{border-top:0; margin-top:1rem}
+h3{font-size:1.1rem; margin:1.75rem 0 .5rem}
+p{margin:.75rem 0}
+a{color:var(--blue); text-underline-offset:.2em}
+a:hover{color:var(--deep)}
+:focus-visible{outline:3px solid var(--blue); outline-offset:3px; border-radius:4px}
+ol,ul{padding-left:1.6em; margin:.5rem 0}
+li{margin:.35rem 0}
+.toc{background:var(--panel); border-radius:12px; padding:1rem 1.25rem; margin:1.25rem 0 0}
+.toc p{margin:0 0 .25rem; font-weight:700}
+.toc ol{list-style:none; padding:0; margin:0}
+@media (min-width:640px){.toc ol{columns:2; column-gap:2rem}}
+.toc li{margin:.15rem 0; break-inside:avoid}
+.note{background:var(--note-bg); color:var(--note-ink); border-left:5px solid var(--note-line);
+      border-radius:8px; padding:.9rem 1.1rem; margin:1rem 0}
+.note strong{display:block; margin-bottom:.15rem}
+.muted{color:var(--sub); font-size:.95rem}
+.mail{font-weight:700; font-size:1.15rem; word-break:break-all}
+footer.site{border-top:1px solid var(--mist); padding:1.5rem 0 2.5rem; color:var(--sub); font-size:.95rem}
+footer.site nav{margin-bottom:.75rem}
+footer.site nav a{display:inline-block; margin:0 1.5rem .5rem 0}
+
+ol.steps{list-style:none; counter-reset:step; padding:0; margin:1rem 0}
+ol.steps>li{counter-increment:step; position:relative; padding:0 0 1.25rem 2.6rem;
+  border-left:2px solid var(--mist); margin:0 0 0 1.6rem}
+ol.steps>li:last-child{border-left-color:transparent; padding-bottom:0}
+ol.steps>li::before{content:counter(step); position:absolute; left:-1.6rem; top:-.15rem;
+  width:3.2rem; height:3.2rem; border-radius:50%; background:var(--blue); color:#fff;
+  font-size:1.6rem; font-weight:700; line-height:3.2rem; text-align:center}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) ol.steps>li::before{color:#0F1522}}
+ol.steps h3{margin:.2rem 0 .25rem; font-size:1.15rem}
+ol.steps p{margin:.25rem 0}
+ol.steps.compact>li::before{width:2.4rem; height:2.4rem; line-height:2.4rem; font-size:1.2rem; left:-1.2rem}
+ol.steps.compact>li{margin-left:1.2rem; padding-left:2.1rem}
+dl.types{margin:1rem 0}
+dl.types dt{font-weight:700; margin-top:1rem; color:var(--deep)}
+dl.types dd{margin:.2rem 0 0}
+details{border-bottom:1px solid var(--mist); padding:.25rem 0}
+details:first-of-type{border-top:1px solid var(--mist)}
+summary{cursor:pointer; font-weight:700; padding:.75rem 2rem .75rem 0; list-style:none; position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋"; position:absolute; right:.25rem; top:.75rem; color:var(--blue); font-weight:700}
+details[open] summary::after{content:"－"}
+details>div{padding:0 0 .75rem}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <p class="app">ワンタッチメール</p>
+    <h1>サポート</h1>
+    <p class="lead">ワンタッチメールは、よく使うメールをボタンに登録しておき、タップするだけで送信できるiPhone用のアプリです。このページでは、初めての設定方法、使い方、困ったときの対処方法をご案内します。</p>
+    <nav class="toc" aria-label="目次">
+      <p>目次</p>
+      <ol>
+        <li><a href="#prepare">ご用意いただくもの</a></li>
+        <li><a href="#setup">初めての設定</a></li>
+        <li><a href="#buttons">ボタンの種類</a></li>
+        <li><a href="#safety">安全に使うための機能</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#lost">iPhoneをなくしたときは</a></li>
+        <li><a href="#report">迷惑メールを受け取った方へ</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ol>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="prepare">
+    <h2>ご用意いただくもの</h2>
+    <ul>
+      <li>iPhone（iPadには対応していません）</li>
+      <li>Gmailアカウント</li>
+      <li>インターネットに接続できる環境</li>
+    </ul>
+    <p>メールの送信には、Gmailの「アプリパスワード」が必要です。アプリパスワードを発行するには、Googleアカウントの「2段階認証プロセス」をオンにしておく必要があります。手順は次の「初めての設定」をご覧ください。</p>
+  </section>
+
+  <section id="setup">
+    <h2>初めての設定</h2>
+    <ol class="steps">
+      <li>
+        <h3>2段階認証プロセスをオンにする</h3>
+        <p>Googleアカウントの<a href="https://myaccount.google.com/security">セキュリティ設定</a>を開き、「2段階認証プロセス」をオンにします。すでにオンの場合は、次へ進んでください。</p>
+      </li>
+      <li>
+        <h3>アプリパスワードを発行する</h3>
+        <p>Googleアカウントの<a href="https://myaccount.google.com/apppasswords">アプリパスワードの画面</a>を開き、わかりやすい名前（例：ワンタッチメール）を入力して作成します。表示された16桁の文字をコピーしてください。通常のGoogleのログインパスワードとは別のものです。</p>
+      </li>
+      <li>
+        <h3>「メール設定」タブで登録する</h3>
+        <p>アプリの「メール設定」タブを開き、Gmailアドレスとアプリパスワード（間のスペースは自動で取り除かれます）を入力します。「送信者表示名」には、相手に差出人として表示されるお名前を入力してください（未入力の場合はGmailアドレスが表示されます）。入力したら「メール設定を保存する」をタップします。</p>
+      </li>
+      <li>
+        <h3>テスト送信で確認する</h3>
+        <p>「メール設定」タブの「（ご自身のGmailアドレス）にテスト送信」ボタンをタップすると、ご自身宛てに確認用のメールが届きます。届いていれば設定は完了です。テスト送信は、保存前の入力内容でも試せます。</p>
+      </li>
+      <li>
+        <h3>ボタンに宛先を登録する</h3>
+        <p>「ボタン設定」タブで、各ボタンの表示名・宛先・件名・本文・動作の種類を入力し、「この内容を保存する」をタップします。ボタンは最大10個まで登録でき、各ボタンの「上へ」「下へ」で並び順を変えられます。</p>
+      </li>
+      <li>
+        <h3>「ワンタッチ」タブから送信する</h3>
+        <p>登録したボタンをタップすると、メールが送信されます。送信中は、押したボタンに「送信中…」と表示されます。送信の結果は画面下に表示されます。</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="buttons">
+    <h2>ボタンの種類</h2>
+    <dl class="types">
+      <dt>ワンタッチ送信</dt>
+      <dd>タップすると、登録した内容ですぐに送信します。</dd>
+      <dt>本文入力して送信</dt>
+      <dd>送信する前に、本文を書き足したり書き換えたりできます。</dd>
+      <dt>確認してから送信</dt>
+      <dd>タップすると宛先・件名・本文の確認画面が表示され、「送信」を選ぶと送信します。誤って送りたくないメールにおすすめです。</dd>
+      <dt>現在地を共有</dt>
+      <dd>宛先の確認画面のあと、現在地を取得し、Googleマップのリンクを付けて送信します。</dd>
+    </dl>
+    <p>このほか、「自由入力」タブでは、宛先・件名・本文をその場で入力して送信できます。</p>
+  </section>
+
+  <section id="safety">
+    <h2>安全に使うための機能</h2>
+    <ul>
+      <li><strong>アプリパスワードの非表示</strong>：保存したアプリパスワードは、安全のため画面に表示されません。</li>
+      <li><strong>送信数の上限</strong>：送りすぎを防ぐため、送信できるのは1分間に5通、1日に100通までです（テスト送信を含みます）。</li>
+      <li><strong>連続送信の確認</strong>：送信してから3秒以内に再び送信しようとすると、確認画面が表示されます。</li>
+      <li><strong>現在地を送る前の確認</strong>：現在地を共有するときは、毎回、宛先を表示した確認画面が出ます。</li>
+    </ul>
+    <p>ワンタッチメールの設定画面には、アプリ独自のロックはありません。iPhoneのロックが解除されていれば、誰でも設定の変更やメールの送信ができます。iPhoneにはパスコードを設定してほかの人には教えず、ロックを解除したままほかの人に渡さないようにしてください。また、ボタンの宛先が意図したものになっているか、ときどき確認することをおすすめします。</p>
+    <div class="note" role="note">
+      <strong>緊急時は、110番・119番などの緊急通報や電話をご利用ください。</strong>
+      ワンタッチメールは緊急通報のための手段ではありません。通信状況などにより、メールが遅れたり届かなかったりすることがあります。
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>よくある質問</h2>
+
+    <details>
+      <summary>「Gmailの認証に失敗しました」と表示されて送信できません</summary>
+      <div>
+        <p>アプリパスワードが正しくない可能性があります。次の点をご確認ください。</p>
+        <ul>
+          <li>通常のGoogleのログインパスワードではなく、16桁のアプリパスワードを入力していますか。</li>
+          <li>Googleアカウントの2段階認証プロセスがオンになっていますか。</li>
+          <li>Googleアカウントの画面で、そのアプリパスワードを削除していませんか。</li>
+        </ul>
+        <p>解決しない場合は、アプリパスワードを新しく発行し、「メール設定」タブで入力し直して保存してください。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>「送信数の上限に達しました」と表示されます</summary>
+      <div>
+        <p>送信できるのは1分間に5通、1日に100通までです（テスト送信や、送信できたか確認できなかった場合も1通として数えます）。1分間の上限の場合は1分ほど待ってから、1日の上限の場合は日付が変わってから、もう一度お試しください。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>「送信できたか確認できませんでした」と表示されました</summary>
+      <div>
+        <p>通信に時間がかかり、送信が完了したかどうかをアプリで確認できなかったときの表示です。実際には相手に届いている場合があるため、すぐに送り直すと同じメールが2通届くおそれがあります。</p>
+        <p>まず、ご自身のGmailの「送信済み」を開き、そのメールがあるかを確認してください。見つからない場合のみ、電波の良い場所で送り直してください。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>保存したアプリパスワードが表示されません</summary>
+      <div>
+        <p>のぞき見などによる悪用を防ぐため、保存したアプリパスワードは表示しない仕組みになっています。パスワード欄が空欄のままでも、保存したアプリパスワードで送信できます。変更したいときだけ、新しいアプリパスワードを入力して保存してください。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>送信に使うGmailアドレスを変更したい</summary>
+      <div>
+        <p>「メール設定」タブで新しいGmailアドレスを入力し、そのアカウントで発行したアプリパスワードもあわせて入力してから保存してください。Gmailアドレスを変更するときは、アプリパスワードの入力が必要です。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>相手に表示される差出人の名前を変えたい</summary>
+      <div>
+        <p>「メール設定」タブの「送信者表示名」に、表示したいお名前を入力して「メール設定を保存する」をタップしてください。未入力の場合は、Gmailアドレスが差出人として表示されます。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>ボタンの並び順を変えたい</summary>
+      <div>
+        <p>「ボタン設定」タブで、各ボタンの「上へ」「下へ」をタップしてください。並び順はタップした時点で保存され、「ワンタッチ」タブの表示順に反映されます。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>現在地を送れません</summary>
+      <div>
+        <p>位置情報の利用が許可されていない可能性があります。iPhoneの「設定」アプリで「プライバシーとセキュリティ」→「位置情報サービス」を開き、位置情報サービスがオンになっていること、ワンタッチメールが「このAppの使用中」になっていることをご確認ください。</p>
+        <p>屋内など電波の届きにくい場所では、現在地を取得できなかったり、誤差が大きくなったりすることがあります。誤差が大きい場合は、メールにその旨が書き添えられます。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>「全角文字が含まれています」と表示されます</summary>
+      <div>
+        <p>メールアドレスは、半角の英数字と記号で入力する必要があります。日本語入力のままだと、「ｔａｒｏ」のように全角で入力されてしまうことがあります。</p>
+        <p>キーボードを英字入力（「ABC」など）に切り替えてから、入力し直してください。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>相手にメールが届いていないようです</summary>
+      <div>
+        <p>次の点をご確認ください。</p>
+        <ul>
+          <li>「ボタン設定」タブで、宛先のメールアドレスが正しいか。</li>
+          <li>相手の迷惑メールフォルダに入っていないか。</li>
+          <li>ご自身のGmailの「送信済み」に、そのメールがあるか。</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>送信した履歴はどこで見られますか</summary>
+      <div>
+        <p>アプリ内には送信の履歴を保存していません。ワンタッチメールから送信したメールは、ご自身のGmailの「送信済み」で確認できます。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>機種変更やアプリの再インストールをしたら、設定は引き継がれますか</summary>
+      <div>
+        <p>アプリを削除して再インストールした場合、メール設定とボタン設定は消去されます。機種変更の場合も、引き継がれないことがあります。その場合は、「初めての設定」の手順で設定し直してください。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>アプリを使わなくなったときは、どうすればよいですか</summary>
+      <div>
+        <p>アプリを削除しても、Googleアカウントで発行したアプリパスワードは有効なまま残ります。安全のため、Googleアカウントの<a href="https://myaccount.google.com/apppasswords">アプリパスワードの画面</a>から、ワンタッチメール用のアプリパスワードを削除してください。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>広告が表示されないことがあります</summary>
+      <div>
+        <p>ワンタッチメールは広告の収益で無料提供しています。文字を入力している間や、広告を読み込めなかったときは、広告を表示しません。アプリの機能には影響ありません。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>iPadで使えますか</summary>
+      <div>
+        <p>iPhone専用のアプリのため、iPadには対応していません。</p>
+      </div>
+    </details>
+  </section>
+
+  <section id="lost">
+    <h2>iPhoneをなくしたときは</h2>
+    <p>ほかの人にメールを送られたり、アプリパスワードを悪用されたりしないよう、できるだけ早く次の対応をしてください。</p>
+    <ol class="steps compact">
+      <li>
+        <h3>アプリパスワードを削除する</h3>
+        <p>パソコンや別のスマートフォンからGoogleアカウントの<a href="https://myaccount.google.com/apppasswords">アプリパスワードの画面</a>を開き、ワンタッチメール用のアプリパスワードを削除します。これで、なくしたiPhoneからはメールを送信できなくなります。</p>
+      </li>
+      <li>
+        <h3>iPhoneを探す・ロックする</h3>
+        <p>Appleの「探す」で、iPhoneの場所の確認や紛失としてのマーク（ロック）を行います。</p>
+      </li>
+      <li>
+        <h3>必要に応じてGoogleのパスワードを変更する</h3>
+        <p>Googleアカウント自体への不正なログインが心配な場合は、Googleのパスワードを変更してください。</p>
+      </li>
+    </ol>
+    <p class="muted">アプリパスワードはiPhoneの中に保存されており、当社では保有していません。そのため、当社で削除や停止を行うことはできません。</p>
+  </section>
+
+  <section id="report">
+    <h2>迷惑メールを受け取った方へ</h2>
+    <p>ワンタッチメールから送信されたと思われるメールで迷惑を受けた場合は、下記の窓口までご連絡ください。</p>
+    <p>ただし、ワンタッチメールのメールは、送信者ご本人のGmailアカウントからGoogleを通じて送信されています。当社はメールの送受信を仲介しておらず、送信者を特定する情報や送信の履歴を保有していないため、当社で送信者を特定したり、送信を止めたりすることはできません。送信元のGmailアドレスについてGoogleへ報告するほか、脅迫やつきまといなどの被害がある場合は、警察などの関係機関にご相談ください。</p>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ</h2>
+    <p>ご質問や不具合のご報告は、次のメールアドレスまでお送りください。このページは、アプリの「メール設定」タブのいちばん下にある「サポート」からも開けます。</p>
+    <p>提供元：合同会社Goat<br><span class="mail">info☆goatokinawa.com</span><br><span class="muted">迷惑メール対策のため、☆を@に置き換えて送信してください。</span></p>
+    <p>お問い合わせの際は、次の情報をお知らせいただくとスムーズです。</p>
+    <ul>
+      <li>アプリのバージョン（「ボタン設定」タブのいちばん下に表示されています）</li>
+      <li>iPhoneの機種とiOSのバージョン</li>
+      <li>起きていること、表示されたメッセージ</li>
+    </ul>
+    <p class="muted">お問い合わせには順次お返事します。内容によっては、お返事までにお時間をいただく場合や、お答えできない場合があります。アプリパスワードは、絶対にお問い合わせのメールに書かないでください。</p>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <nav aria-label="関連ページ">
+      <a href="https://keipoi128-lgtm.github.io/one_touch_mail_support/">サポート</a>
+      <a href="https://keipoi128-lgtm.github.io/one_touch_mail_terms_of_service/">利用規約</a>
+      <a href="https://keipoi128-lgtm.github.io/one_touch_mail_privacy_policy/">プライバシーポリシー</a>
+    </nav>
+    <p>提供：合同会社Goat</p>
+  </div>
+</footer>
+</body>
+</html>
